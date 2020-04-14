@@ -1,7 +1,8 @@
+"""
 import csv
 
 def searchByRegion():
-    region = input("Enter region name: ")
+    region = input("Digite el nombre de la región: ")
     csv_file = csv.reader(open('covid19.csv', 'r'))
 
     for row in csv_file:
@@ -11,7 +12,7 @@ def searchByRegion():
 
 
 def searchByDate():
-    year = str(input("Enter date to show data: "))
+    year = str(input("Digite la fecha: "))
     csv_file = csv.reader(open('covid19.csv', 'r'))
 
     for row in csv_file:
@@ -20,20 +21,24 @@ def searchByDate():
 
 
 
+def searchByHospitalized():
+    hospitalized = int(input("Digite "))
+
+
 
 with open('covid19.csv', 'r') as csv_file:
 
     csv_reader = csv.reader(csv_file)
 
     for line in csv_reader:
+
         print(line)
 
 print("\n\n")
-print("Enter 1 to search by date")
-print("Enter 2 to search by region name")
+print("Digite 1 para buscar por fecha: ")
+print("Digite 2 para buscar por nombre de región: ")
+src = int(input("Digite aquí: "))
 
-
-src = int(input("Enter here: "))
 
 print("\n\n")
 if src == 1:
@@ -42,21 +47,34 @@ elif src == 2:
     searchByRegion()
 else:
     print("Error!")
+"""
 
 
 
 
 
 
-
-
-"""from flask import Flask, request, render_template
+"""
+from flask import Flask, request, render_template
 import csv
 
 app = Flask(__name__)
 
+
+with open('covid19.csv', 'r') as csv_file:
+
+    csv_reader = csv.reader(csv_file)
+
+    for line in csv_reader:
+
+        print(line)
+
+print("\n\n")
+
+
 @app.route('/', methods=['GET', 'POST'])
 def inicio():
+
     if request.method == 'POST':
         age = request.form['age']
         ed = ""
@@ -66,7 +84,7 @@ def inicio():
             ed = "Mayor"
 
 
-        return render_template('age.html', age = age, ed = ed)
+        return render_template('age.html', age = age, ed = ed, line = line)
 
 
     return render_template('index.html')
@@ -75,4 +93,37 @@ def inicio():
 
 
 if __name__ == "__main__":
-    app.run()"""
+    app.run()
+"""
+
+
+
+
+
+
+
+from flask import Flask, render_template, request
+import pandas as pd
+import csv
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
+
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+    if request.method == 'POST':
+        f = request.form['csvfile']
+        data = []
+        with open('covid19.csv', 'r') as file:
+            csvfile = csv.reader(file)
+            for row in csvfile:
+                data.append(row)
+        data = pd.DataFrame(data)
+        #print(type(data))
+        return render_template('data.html', data = data.to_html(header=False))
+
+if __name__ == '__main__':
+    app.run(debug=True)
