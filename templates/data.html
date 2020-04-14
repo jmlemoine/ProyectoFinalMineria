@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,17 +8,23 @@
     <form method="POST">
         <h1>Proyecto Final de Minería</h1>
         <br>
-        <p>Introduzca '1' para buscar por nombre de región</p>
-        <p>Introduzca '2' para buscar por fecha</p>
-        <input name="u">
-        <input type="submit">
+        <h1>{{ age }}</h1>
+        <h1>{{ ed }}</h1>
+        <!--<p>Introduzca 'a' para buscar por nombre de región</p>
+        <p>Introduzca 'b' para buscar por fecha</p>-->
+        <input type="text" name="age">
+        <input type="submit" value="submit">
+        <br><br>
+
+        <br><br><br><br><br><br>
+        {{ data | safe }}
+
     </form>
 </body>
-</html>-->
+</html>
 
 <!--{% for i in data %}
 {{ i }} <br>
 {% endfor %}-->
 
 
-{{ data | safe }}
