@@ -112,16 +112,43 @@ def data():
             data = pd.DataFrame(data)
             return render_template('data.html', data=data.to_html(header=False))#, user=user)#, ed=ed)
 
-    if request.method == 'POST':
-        if 'fecha' in request.form:
-            ed = "Fecha"
-            return ed
+        if 'fechas' in request.form:
+            fecha = request.form['fechas']
+            ed = fecha#"Fecha"
+            return fecha
+            f = request.form
+            data = []
+            with open('covid19.csv', 'r') as file:
+                csvfile = csv.reader(file)
+                for row in csvfile:
+                    if fecha in row[0]:
+                        data.append(row)
+            data = pd.DataFrame(data)
+            return render_template('data.html', fecha = fecha, ed = ed, data=data.to_html(header=False))
+
+    """if request.method == 'POST':
+        if 'fechas' in request.form:
+            fecha = request.form['fechas']
+            ed = fecha#"Fecha"
+            return fecha
+            f = request.form
+            data = []
+            with open('covid19.csv', 'r') as file:
+                csvfile = csv.reader(file)
+                for row in csvfile:
+                    if fecha in row[0]:
+                        data.append(row)
+            data = pd.DataFrame(data)
+            return render_template('data.html', fecha = fecha, ed = ed, data=data.to_html(header=False))"""
 
 
     if request.method == 'POST':
-        if 'region' in request.form:
-            ed = "Región"
+        if 'regiones' in request.form:
+            region = request.form['regiones']
+            ed = region#"Región"
             return ed
+
+
 
             """else:
                 ed = "Error"
