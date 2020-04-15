@@ -96,18 +96,13 @@ age = None
 @app.route('/data', methods=['GET', 'POST'])
 def data():
     if request.method == 'POST':
-        age = request.form['age']
-        ed = ""
-        if (age == 'a'):
-            ed = "Opción a"
-            return render_template('data.html', age=age, ed=ed)
-            #searchByRegion()
-        if (age == 'b'):
-            ed = "Opción b"
-            return render_template('data.html', age=age, ed=ed)
-            #searchByDate()
-        if (age == 'c'):
-            ed = "Opción c"
+        if 'csvfile' in request.form:
+            user = request.form['age']
+            ed = ""
+            #if (user == "c"):
+            #ed = "Opción C"
+            #return user
+            #ed = "Opción c"
             f = request.form
             data = []
             with open('covid19.csv', 'r') as file:
@@ -115,11 +110,45 @@ def data():
                 for row in csvfile:
                     data.append(row)
             data = pd.DataFrame(data)
-            return render_template('data.html', data=data.to_html(header=False), age=age, ed=ed)
+            return render_template('data.html', data=data.to_html(header=False), user=user)#, ed=ed)
+
+            """else:
+                ed = "Error"
+                return render_template('data.html', ed = ed)
+            #return render_template('data.html', user = user, ed = ed)"""
+    """age = request.form['c1']
+    ed = ""
+    if (age == 'a'):
+        ed = "Opción a"
+        return render_template('data.html', age=age, ed=ed)
+        #searchByRegion()
+    if (age == 'b'):
+        ed = "Opción b"
+        return render_template('data.html', age=age, ed=ed)
+        #searchByDate()
+    if (age == 'c'):
+        ed = "Opción c"
+        f = request.form
+        data = []
+        with open('covid19.csv', 'r') as file:
+            csvfile = csv.reader(file)
+            for row in csvfile:
+                data.append(row)
+        data = pd.DataFrame(data)
+        return render_template('data.html', data=data.to_html(header=False), age=age, ed=ed)
+    else:
+        return "Error"
+        
+        
 
 
 
-        """age = request.form['age']
+
+
+
+
+
+        age = request.form['age']
         ed = ""
         if (age == 'a'):
             ed = "Opción a"
