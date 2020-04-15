@@ -112,6 +112,17 @@ def data():
             data = pd.DataFrame(data)
             return render_template('data.html', data=data.to_html(header=False))#, user=user)#, ed=ed)
 
+    if request.method == 'POST':
+        if 'fecha' in request.form:
+            ed = "Fecha"
+            return ed
+
+
+    if request.method == 'POST':
+        if 'region' in request.form:
+            ed = "Región"
+            return ed
+
             """else:
                 ed = "Error"
                 return render_template('data.html', ed = ed)

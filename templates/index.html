@@ -77,22 +77,22 @@
 
     <h1>Proyecto Final de Minería</h1>
         <br>
-
+        <form class="" action="data" name="csvfile" method="post">
         <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Leer el dataset de otra forma:
         <br><br><br>
 
         <input type="radio" id="skill1" onfocus="eselect1();" name="s1" disabled="disabled" />Buscar por fecha
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="skill3" name="Submit" disabled="disabled" />
+        <input type="text" id="skill3" name="fechas" disabled="disabled" />
         &nbsp;
-        <input type="submit" id="skill6" name="Submit" disabled="disabled" />
+        <input type="submit" id="skill6" name="fecha" value="Submit" disabled="disabled" />
 
         <br><br>
         <input type="radio" id="skill2" name="s1" onfocus="dselect1();" disabled="disabled" />Buscar por RegionName
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="skill5" name="Submit" disabled="disabled" />
+        <input type="text" id="skill5" name="regiones" disabled="disabled" />
         &nbsp;
-        <input type="submit" id="skill7" name="Submit" disabled="disabled" />
+        <input type="submit" id="skill7" name="region" value="Submit" disabled="disabled" />
 
 
 
@@ -101,7 +101,7 @@
 
         <input type="radio" name="c1" onfocus="disablecheckbox();" value="1" />Leer el dataset completo<br><br>
 
-        <form class="" action="data" name="csvfile" method="post">
+        <!--<form class="" action="data" name="csvfile" method="post">-->
         <!--<input type="text" id="skill3" name="age" disabled="disabled" required /><br><br>-->
         <input type="submit" id="skill4" name="csvfile" disabled="disabled" value="Submit" />
         </form>
