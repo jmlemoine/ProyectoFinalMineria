@@ -7,45 +7,54 @@
 <body>
 
     <script type="text/javascript">
-        document.getElementById('skill3').disabled=true;
+        /*document.getElementById('skill3').disabled=true;
         document.getElementById('skill3').checked=false;
         document.getElementById('skill5').disabled=true;
-        document.getElementById('skill5').checked=false;
+        document.getElementById('skill5').checked=false;*/
+
         function disablecheckbox()
         {
             document.getElementById('skill1').disabled=true;
             document.getElementById('skill2').disabled=true;
-            //document.getElementById('skill3').disabled=true;
             document.getElementById('skill4').disabled=false;
+
             document.getElementById('skill1').checked=false;
             document.getElementById('skill2').checked=false;
-            //document.getElementById('skill3').checked=false;
             document.getElementById('skill4').checked=true;
+
+            document.getElementById('skill3').disabled=true;
+            document.getElementById('skill3').checked=false;
+            document.getElementById('skill5').disabled=true;
+            document.getElementById('skill5').checked=false;
+
         }
+
         function enablecheckbox()
         {
             document.getElementById('skill1').disabled=false;
             document.getElementById('skill2').disabled=false;
-            //document.getElementById('skill3').disabled=true;
+
             document.getElementById('skill4').disabled=true;
+
+            document.getElementById('skill3').disabled=true;
+            document.getElementById('skill3').checked=false;
+            document.getElementById('skill5').disabled=true;
+            document.getElementById('skill5').checked=false;
+
         }
         /*function dselect1()
         {
-            document.getElementById('skill1').disabled=false;
-            document.getElementById('skill2').disabled=false;
             document.getElementById('skill3').disabled=true;
-            document.getElementById('skill4').disabled=false;
-            document.getElementById('skill1').checked=true;
-            document.getElementById('skill2').checked=true;
             document.getElementById('skill3').checked=false;
-            document.getElementById('skill4').checked=true;
+            document.getElementById('skill5').disabled=true;
+            document.getElementById('skill5').checked=false;
         }
         function eselect1()
         {
-            document.getElementById('skill1').disabled=true;
-            document.getElementById('skill2').disabled=true;
-            document.getElementById('skill3').disabled=true;
-            document.getElementById('skill4').disabled=false;
+            document.getElementById('skill3').disabled=false;
+            document.getElementById('skill3').checked=true;
+            document.getElementById('skill5').disabled=true;
+            document.getElementById('skill5').checked=false;
         }*/
     </script>
 
@@ -54,14 +63,19 @@
 
         <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Leer el dataset de otra forma:
         <br><br><br>
-        <input type="radio" id="skill1" onfocus="enablecheckbox();" name="s1" disabled="disabled" />Buscar por fecha
+
+        <input type="radio" id="skill1" onfocus="eselect1();" name="s1" disabled="disabled" />Buscar por fecha
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="skill3" name="Submit" disabled="disabled" />&nbsp;<input type="submit" name="Submit">
+        <input type="text" id="skill3" name="Submit" disabled="disabled" />
+        &nbsp;
+        <input type="submit" id="skill6" name="Submit" disabled="disabled" />
 
         <br><br>
-        <input type="radio" id="skill2" name="s1" onfocus="enablecheckbox();" disabled="disabled" />Buscar por RegionName
+        <input type="radio" id="skill2" name="s1" onfocus="dselect1();" disabled="disabled" />Buscar por RegionName
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="skill5" name="Submit" disabled="disabled">&nbsp;<input type="submit" name="Submit">
+        <input type="text" id="skill5" name="Submit" disabled="disabled" />
+        &nbsp;
+        <input type="submit" id="skill7" name="Submit" disabled="disabled" />
 
 
 
