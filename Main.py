@@ -119,6 +119,29 @@ def data():
 
 
 
+        """age = request.form['age']
+        ed = ""
+        if (age == 'a'):
+            ed = "Opción a"
+            return render_template('data.html', age=age, ed=ed)
+            #searchByRegion()
+        if (age == 'b'):
+            ed = "Opción b"
+            return render_template('data.html', age=age, ed=ed)
+            #searchByDate()
+        if (age == 'c'):
+            ed = "Opción c"
+            f = request.form
+            data = []
+            with open('covid19.csv', 'r') as file:
+                csvfile = csv.reader(file)
+                for row in csvfile:
+                    data.append(row)
+            data = pd.DataFrame(data)
+            return render_template('data.html', data=data.to_html(header=False), age=age, ed=ed)"""
+
+
+
 
 """
 @app.route('/age', methods=['GET', 'POST'])
