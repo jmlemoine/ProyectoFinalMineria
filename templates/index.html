@@ -11,18 +11,18 @@
         {
             document.getElementById('skill1').disabled=true;
             document.getElementById('skill2').disabled=true;
-            document.getElementById('skill3').disabled=false;
+            //document.getElementById('skill3').disabled=false;
             document.getElementById('skill4').disabled=false;
             document.getElementById('skill1').checked=false;
             document.getElementById('skill2').checked=false;
-            document.getElementById('skill3').checked=true;
+            //document.getElementById('skill3').checked=true;
             document.getElementById('skill4').checked=true;
         }
         function enablecheckbox()
         {
             document.getElementById('skill1').disabled=false;
             document.getElementById('skill2').disabled=false;
-            document.getElementById('skill3').disabled=true;
+            //document.getElementById('skill3').disabled=true;
             document.getElementById('skill4').disabled=true;
         }
     </script>
@@ -30,16 +30,16 @@
     <h1>Proyecto Final de Minería</h1>
         <br>
 
-        <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Yes<br><br>
+        <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Leer el dataset de otra forma:<br><br>
 
-        <input type="radio" id="skill1" name="s1" disabled="disabled" /><br><br>
-        <input type="radio" id="skill2" name="s1" disabled="disabled" />
+        <input type="radio" id="skill1" name="s1" disabled="disabled" />Buscar por fecha<br><br>
+        <input type="radio" id="skill2" name="s1" disabled="disabled" />Buscar por RegionName
         <br><br><br>
 
         <input type="radio" name="c1" onfocus="disablecheckbox();" value="1" />Leer el dataset completo<br><br>
-        <!--<input class="btn btn-primary" type="submit" name="csvfile" id="option3" value="option3">-->
+
         <form class="" action="data" name="csvfile" method="post">
-        <input type="text" id="skill3" name="age" disabled="disabled" required /><br><br>
+        <!--<input type="text" id="skill3" name="age" disabled="disabled" required /><br><br>-->
         <input type="submit" id="skill4" name="csvfile" disabled="disabled" value="Submit" />
         </form>
         <br><br>

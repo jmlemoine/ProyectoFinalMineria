@@ -97,7 +97,7 @@ age = None
 def data():
     if request.method == 'POST':
         if 'csvfile' in request.form:
-            user = request.form['age']
+            #user = request.form['age']
             ed = ""
             #if (user == "c"):
             #ed = "Opción C"
@@ -110,7 +110,7 @@ def data():
                 for row in csvfile:
                     data.append(row)
             data = pd.DataFrame(data)
-            return render_template('data.html', data=data.to_html(header=False), user=user)#, ed=ed)
+            return render_template('data.html', data=data.to_html(header=False))#, user=user)#, ed=ed)
 
             """else:
                 ed = "Error"
