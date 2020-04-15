@@ -7,15 +7,19 @@
 <body>
 
     <script type="text/javascript">
+        document.getElementById('skill3').disabled=true;
+        document.getElementById('skill3').checked=false;
+        document.getElementById('skill5').disabled=true;
+        document.getElementById('skill5').checked=false;
         function disablecheckbox()
         {
             document.getElementById('skill1').disabled=true;
             document.getElementById('skill2').disabled=true;
-            //document.getElementById('skill3').disabled=false;
+            //document.getElementById('skill3').disabled=true;
             document.getElementById('skill4').disabled=false;
             document.getElementById('skill1').checked=false;
             document.getElementById('skill2').checked=false;
-            //document.getElementById('skill3').checked=true;
+            //document.getElementById('skill3').checked=false;
             document.getElementById('skill4').checked=true;
         }
         function enablecheckbox()
@@ -25,16 +29,44 @@
             //document.getElementById('skill3').disabled=true;
             document.getElementById('skill4').disabled=true;
         }
+        /*function dselect1()
+        {
+            document.getElementById('skill1').disabled=false;
+            document.getElementById('skill2').disabled=false;
+            document.getElementById('skill3').disabled=true;
+            document.getElementById('skill4').disabled=false;
+            document.getElementById('skill1').checked=true;
+            document.getElementById('skill2').checked=true;
+            document.getElementById('skill3').checked=false;
+            document.getElementById('skill4').checked=true;
+        }
+        function eselect1()
+        {
+            document.getElementById('skill1').disabled=true;
+            document.getElementById('skill2').disabled=true;
+            document.getElementById('skill3').disabled=true;
+            document.getElementById('skill4').disabled=false;
+        }*/
     </script>
 
     <h1>Proyecto Final de Minería</h1>
         <br>
 
-        <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Leer el dataset de otra forma:<br><br>
-
-        <input type="radio" id="skill1" name="s1" disabled="disabled" />Buscar por fecha<br><br>
-        <input type="radio" id="skill2" name="s1" disabled="disabled" />Buscar por RegionName
+        <input type="radio" name="c1" onfocus="enablecheckbox();" value="0" />Leer el dataset de otra forma:
         <br><br><br>
+        <input type="radio" id="skill1" onfocus="enablecheckbox();" name="s1" disabled="disabled" />Buscar por fecha
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="skill3" name="Submit" disabled="disabled" />&nbsp;<input type="submit" name="Submit">
+
+        <br><br>
+        <input type="radio" id="skill2" name="s1" onfocus="enablecheckbox();" disabled="disabled" />Buscar por RegionName
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="skill5" name="Submit" disabled="disabled">&nbsp;<input type="submit" name="Submit">
+
+
+
+
+        <br><br><br><br><br><br>
 
         <input type="radio" name="c1" onfocus="disablecheckbox();" value="1" />Leer el dataset completo<br><br>
 
